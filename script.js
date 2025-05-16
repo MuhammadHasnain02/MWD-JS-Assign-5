@@ -182,13 +182,16 @@ var products = [
 
 // Exercise 6
 
-// let formattedProducts = products.map(product => {
+// let formattedProducts = products.map(products => {
+
 //   return {
-//     title: product.title,
-//     variations: product.variations.map(variation => ({
+//     title: products.title,
+//     variations: products.variations.map(variation => ({
+
 //       color: variation.color,
 //       price: variation.price,
 //       quantity: variation.quantity
+
 //     }))
 //   };
 // });
@@ -199,40 +202,51 @@ var products = [
 
 // Exercise 7
 
-// let formatVariations = products.map((products) => {
-  
-//   let format = {
+// let totalRevenue = products.reduce((acc , products) => {
 
-//     title : products.title ,
-//     variations : products.variations.map((variations) => ({
-//       color : variations.color ,
-//       price : variations.price ,
-//       quantity : variations.quantity
-//     }))
+//   let sumPrice = products.variations.reduce((acc , variations) => acc + variations.price , 0)
 
-//   }
+//   return acc + sumPrice
 
-//   return format
-// })
-
-// console.log(formatVariations)
+// } ,0)
+// console.log(totalRevenue);
 
 // -------------------------------
 
 // Exercise 8
 
+// let more5Items = products.filter((products) => {
 
+//   let check = products.variations.find((variations) => variations.quantity > 5)
+
+//   return check
+// })
+// console.log(more5Items);
 
 // -------------------------------
 
 // Exercise 9
 
+// let summaryProd = products.map((products) => ({
 
+//   title     : products.title,
+//   variations: products.variations.length,
+//   reviews   : products.reviews.length
+
+// }))
+// console.log(summaryProd);
 
 // -------------------------------
 
 // Exercise 10
 
+// let highstStckPrdct = products.map((products) => ({
 
+//   title : products.title ,
+//   totalStock : products.variations.reduce((sum , variations) => sum + variations.quantity , 0)
+
+// })).reduce((max , curr) => curr.totalStock > max.totalStock ? curr : max)
+
+// console.log(highstStckPrdct)
 
 // -------------------------------
